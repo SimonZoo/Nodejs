@@ -12,7 +12,7 @@ var fn_signin = async(ctx, next) => {
         name = ctx.request.body.name || '',
         password = ctx.request.body.password || '';
     console.log(`Signin with name: ${name},password: ${password}`);
-    if(name === 'koa' && password ==='12345') {
+    if(password === name) {
         ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
     } else {
         ctx.response.body = `<h1>Login Failed.</h1>
