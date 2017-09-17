@@ -23,4 +23,14 @@ app.use(async(ctx, next) => {
     console.log('function 3 - 2');
 });
 
+app.use(async(ctx, next) => {
+    console.log('function 4 - 1');
+});
+
+app.use(async(ctx, next) => {
+    console.log('function 5 - 1');
+    await next();
+    console.log('function 5 - 2');
+});
 app.listen(3002);
+console.log('Running at port 3002');
